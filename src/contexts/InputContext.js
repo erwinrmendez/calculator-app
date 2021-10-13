@@ -75,10 +75,12 @@ const InputContextProvider = ({ children }) => {
   const handleOperation = (operation) => {
     // evaluate adding minus sign to denote negative numbers
     // TO BE REVIEWED
-    if (isNewInput && operation === "substract") {
-      setInputValue("-");
-      setIsNewInput(false);
-      return;
+    if (operation === "substract") {
+      if (inputValue === "" || currentOperation) {
+        setInputValue("-");
+        setIsNewInput(false);
+        return;
+      }
     }
 
     // switch operations if there is a current operation and is not in new input mode

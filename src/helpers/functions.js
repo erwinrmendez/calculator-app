@@ -11,9 +11,3 @@ export const getLocalTheme = () => {
 export const saveThemeToLocal = (theme) => {
   localStorage.setItem("theme", theme);
 };
-
-// string formatting
-
-export const removeCommas = (value) => {
-  return value.replaceAll(",", "");
-};

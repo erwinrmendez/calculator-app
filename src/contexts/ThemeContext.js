@@ -1,31 +1,50 @@
 import { createContext, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, darkerTheme } from "../theme";
-import { getLocalTheme } from "../helpers/functions";
+import { getLocalTheme, saveThemeToLocal } from "../helpers/functions";
 
 export const ThemeToggleContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(darkTheme);
+  const [theme, setTheme] = useState(lightTheme);
   const [selectedTheme, setSelectedTheme] = useState(getLocalTheme());
 
   useEffect(() => {
-    toggleTheme();
-    // eslint-disable-next-line
+    // listen for theme changes
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) =>
+        setSelectedTheme(e.matches ? "dark" : "light")
+      );
+
+    return () => {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", (e) =>
+          setSelectedTheme(e.matches ? "dark" : "light")
+        );
+    };
   }, []);
 
+  // change theme when selectedTheme is changed
   useEffect(() => {
-    toggleTheme();
-    // eslint-disable-next-line
+    saveThemeToLocal(selectedTheme);
+    toggleTheme(selectedTheme);
   }, [selectedTheme]);
 
-  const toggleTheme = () => {
-    if (selectedTheme === "dark") {
-      setTheme(darkTheme);
-    } else if (selectedTheme === "light") {
-      setTheme(lightTheme);
-    } else {
-      setTheme(darkerTheme);
+  const toggleTheme = (selectedTheme) => {
+    switch (selectedTheme) {
+      case "dark":
+        setTheme(darkTheme);
+        break;
+      case "light":
+        setTheme(lightTheme);
+        break;
+      case "darker":
+        setTheme(darkerTheme);
+        break;
+      default:
+        break;
     }
   };
 

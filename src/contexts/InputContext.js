@@ -74,7 +74,6 @@ const InputContextProvider = ({ children }) => {
 
   const handleOperation = (operation) => {
     // evaluate adding minus sign to denote negative numbers
-    // TO BE REVIEWED
     if (operation === "substract") {
       if (inputValue === "" || currentOperation) {
         setInputValue("-");
@@ -134,12 +133,6 @@ const InputContextProvider = ({ children }) => {
 
   const handleKeyDown = (e) => {
     e.preventDefault();
-
-    // if ([37, 38, 39, 40].includes(e.keyCode)) {
-    //   // prevent moving cursor using arrow keys
-    //   e.preventDefault();
-    //   return;
-    // }
 
     if (!isNaN(+e.key)) {
       addToInput(e.key);

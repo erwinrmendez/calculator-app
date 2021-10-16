@@ -6,7 +6,7 @@ import { Container } from "./styled";
 
 const Layout = () => {
   return (
-    <Container mw="375px">
+    <Container mw="375px" role="main">
       <Header />
       <Main />
       <Footer />

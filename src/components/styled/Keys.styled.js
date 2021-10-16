@@ -19,7 +19,7 @@ export const RegularKey = styled.button`
   background: ${(props) => props.bg || props.theme.keyDefaultBG};
   box-shadow: 0 5px 0
     ${(props) => props.shadowColor || props.theme.keyDefaultShadow};
-  color: ${(props) => props.color || props.theme.textColorDefault};
+  color: ${(props) => props.textColor || props.theme.textColorDefault};
   border: none;
   border-radius: 5px;
   height: 50px;

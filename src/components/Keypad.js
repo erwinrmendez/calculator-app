@@ -29,7 +29,7 @@ const Keypad = ({ setCursor }) => {
         smaller
         bg={theme.keyBG1}
         shadowColor={theme.keyShadow1}
-        color="#FFF"
+        textColor="#FFF"
         onClick={handleDelete}
       >
         DEL
@@ -62,7 +62,7 @@ const Keypad = ({ setCursor }) => {
         smaller
         bg={theme.keyBG1}
         shadowColor={theme.keyShadow1}
-        color="#FFF"
+        textColor="#FFF"
         onClick={handleReset}
       >
         RESET
@@ -72,7 +72,7 @@ const Keypad = ({ setCursor }) => {
         smaller
         bg={theme.keyBG2}
         shadowColor={theme.keyShadow2}
-        color="#FFF"
+        textColor="#FFF"
         onClick={showResult}
       >
         =

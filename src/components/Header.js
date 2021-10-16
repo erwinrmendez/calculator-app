@@ -26,28 +26,28 @@ const Header = () => {
   return (
     <StyledHeader>
       <h1>calc</h1>
-      <h6>THEME</h6>
+      <span className="theme">THEME</span>
       <StyledSwitch>
         <label htmlFor="dark">
-          <span>1</span>
-          <div className="left">
+          <span className="themeLabel">1</span>
+          <span className="toggle left">
             <Switcher customValue="dark" />
             <StyledCircle />
-          </div>
+          </span>
         </label>
         <label htmlFor="light">
-          <span>2</span>
-          <div>
+          <span className="themeLabel">2</span>
+          <span className="toggle">
             <Switcher customValue="light" />
             <StyledCircle />
-          </div>
+          </span>
         </label>
         <label htmlFor="darker">
-          <span>3</span>
-          <div className="right">
+          <span className="themeLabel">3</span>
+          <span className="toggle right">
             <Switcher customValue="darker" />
             <StyledCircle />
-          </div>
+          </span>
         </label>
       </StyledSwitch>
     </StyledHeader>

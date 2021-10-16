@@ -10,9 +10,11 @@ export const StyledHeader = styled.header`
     flex: 1;
   }
 
-  h6 {
+  span.theme {
     letter-spacing: 1px;
     margin-right: 1.5em;
+    padding-top: 2.3em;
+    font-size: 0.65em;
   }
 `;
 
@@ -24,13 +26,13 @@ export const StyledSwitch = styled.div`
     flex-direction: column;
     align-items: center;
 
-    span {
+    span.themeLabel {
       font-size: 12px;
       font-weight: bold;
       margin-bottom: 5px;
     }
 
-    div {
+    span.toggle {
       position: relative;
       width: 20px;
       height: 20px;
@@ -38,11 +40,11 @@ export const StyledSwitch = styled.div`
       cursor: pointer;
     }
 
-    div.left {
+    span.left {
       border-radius: 20px 0 0 20px;
     }
 
-    div.right {
+    span.right {
       border-radius: 0 20px 20px 0;
     }
   }

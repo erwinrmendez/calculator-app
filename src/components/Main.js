@@ -24,6 +24,7 @@ const Main = () => {
         onChange={(e) => handleInput(e.target.value)}
         onClick={() => setCursor()}
         autoFocus
+        aria-label="Input Value"
       />
       <Keypad setCursor={setCursor} />
     </>
